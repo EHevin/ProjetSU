@@ -18,4 +18,13 @@ class ProjetController extends Controller
       ]);
     }
 
+    /**
+     * @Route("/listebien", name="biens")
+     */
+    public function listebienAction()
+    {
+        return $this->render('default/listebien.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
+    }
 }

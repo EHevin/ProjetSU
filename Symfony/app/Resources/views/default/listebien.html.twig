@@ -1,0 +1,87 @@
+{% extends 'layoutbien.html.twig' %}
+
+{% block title %}
+    {{parent() }}
+{% endblock %}
+
+{% block body %}
+    <section id="page-liste-bien">
+        <div class="container">
+            <div class="row">
+                <h2 class="col-sm-9 col-xs-12 col-sm-offset-3">Etiam aliquam faucibus velit, a elementum massa donec.</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 fixed">
+                    <p>test</p>
+                    <p>Ceci est un test</p>
+                </div>
+                <div class="col-sm-3 produit">
+                    <img src="{{ asset('css/img/produit/01.jpg') }}">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                </div>
+                <!--<div class="col-sm-3 produit">
+                    <img src="css/img/produit/02.jpg">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                    <a href="#">Découvrir le bien</a>
+                </div>
+                <div class="col-sm-3 produit">
+                    <img src="css/img/produit/03.jpg">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                    <a href="#">Découvrir le bien</a>
+                </div>
+                <div class="col-sm-3 produit">
+                    <img src="css/img/produit/04.jpg">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                    <a href="#">Découvrir le bien</a>
+                </div>
+                <div class="col-sm-3 produit">
+                    <img src="css/img/produit/03.jpg">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                    <a href="#">Découvrir le bien</a>
+                </div>
+                <div class="col-sm-3 produit">
+                    <img src="css/img/produit/04.jpg">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                    <a href="#">Découvrir le bien</a>
+                </div>
+                <div class="col-sm-3 produit">
+                    <img src="css/img/produit/04.jpg">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                    <a href="#">Découvrir le bien</a>
+                </div>
+                <div class="col-sm-3 produit">
+                    <img src="css/img/produit/03.jpg">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                    <a href="#">Découvrir le bien</a>
+                </div>
+                <div class="col-sm-3 produit">
+                    <img src="css/img/produit/04.jpg">
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                    <a href="#">Découvrir le bien</a>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <section id="profiler">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-3 decouvrir-lyon">
+                    <h2 class="col-xs-9">Etiam aliquam faucibus velit, a elementum massa donec.</h2>
+                    <p class="col-xs-9">Donec ultricies euismod nibh, quis posuere ligula hendrerit ac. Praesent non lacinia lacus. Cras dapibus turpis et tellus. Donec ultricies euismod nibh, quis posuere ligula hendrerit ac. Praesent non lacinia lacus. Cras dapibus turpis et tellus.</p>
+                    <button class="col-xs-3 col-xs-offset-6" type="button">Découvrir Lyon</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

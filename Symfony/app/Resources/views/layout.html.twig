@@ -10,17 +10,34 @@
 
 
 {% block header %}
-    <header class="header">
-      <div class="container header">
-          <div class="row text-header">
-              <div class="banniere col-xs-8">
-                  <h1>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices semper fringilla. ”</h1>
-              </div>
-              <div class="col-xs-12">
-                  <button type="button">Découvrir des biens</button>
-              </div>
-          </div>
-      </div>
+    <header class="header-bien" >
+        <div class="overlay-navigation">
+            <nav role="navigation" >
+                <ul>
+                    <li><a href="#" data-content="Découvrez de nombreux biens">Trouver un bien</a></li>
+                    <li><a href="#" data-content="Découvrez les quartiers lyonnais">Découvrir Lyon</a></li>
+                    <li><a href="#" data-content="Quelles sont les dernières news ?">Actualités</a></li>
+                    <li><a href="#" data-content="Envie de nous parler ?">Contact</a></li>
+                    <li><a href="#" data-content="Accéder à votre compte">Espace personnel</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="home">
+            <div class="open-overlay">
+                <span class="bar-top"></span>
+                <span class="bar-middle"></span>
+                <span class="bar-bottom"></span>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="row text-header">
+                <div class="banniere col-xs-8">
+                    <h1>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices semper fringilla. ”</h1>
+                </div>
+            </div>
+        </div>
     </header>
 {% endblock %}
 
@@ -101,4 +118,61 @@
           <a href="#">Mentions légales</a>
       </section>
     </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script type="text/javascript">
+        function afficher() {
+            document.getElementById('form-1').style.display = 'none';
+            document.getElementById('form-2').style.display = 'block';
+        }
+
+        function afficher2() {
+            document.getElementById('form-2').style.display = 'none';
+            document.getElementById('form-3').style.display = 'block';
+        }
+
+        function afficher3() {
+            document.getElementById('form-3').style.display = 'none';
+            document.getElementById('form-4').style.display = 'block';
+        }
+        $('.open-overlay').click(function() {
+            var overlay_navigation = $('.overlay-navigation'),
+                nav_item_1 = $('nav li:nth-of-type(1)'),
+                nav_item_2 = $('nav li:nth-of-type(2)'),
+                nav_item_3 = $('nav li:nth-of-type(3)'),
+                nav_item_4 = $('nav li:nth-of-type(4)'),
+                nav_item_5 = $('nav li:nth-of-type(5)'),
+                top_bar = $('.bar-top'),
+                middle_bar = $('.bar-middle'),
+                bottom_bar = $('.bar-bottom');
+
+            overlay_navigation.toggleClass('overlay-active');
+            if (overlay_navigation.hasClass('overlay-active')) {
+
+                top_bar.removeClass('animate-out-top-bar').addClass('animate-top-bar');
+                middle_bar.removeClass('animate-out-middle-bar').addClass('animate-middle-bar');
+                bottom_bar.removeClass('animate-out-bottom-bar').addClass('animate-bottom-bar');
+                overlay_navigation.removeClass('overlay-slide-up').addClass('overlay-slide-down')
+                nav_item_1.removeClass('slide-in-nav-item-reverse').addClass('slide-in-nav-item');
+                nav_item_2.removeClass('slide-in-nav-item-delay-1-reverse').addClass('slide-in-nav-item-delay-1');
+                nav_item_3.removeClass('slide-in-nav-item-delay-2-reverse').addClass('slide-in-nav-item-delay-2');
+                nav_item_4.removeClass('slide-in-nav-item-delay-3-reverse').addClass('slide-in-nav-item-delay-3');
+                nav_item_5.removeClass('slide-in-nav-item-delay-4-reverse').addClass('slide-in-nav-item-delay-4');
+            } else {
+                top_bar.removeClass('animate-top-bar').addClass('animate-out-top-bar');
+                middle_bar.removeClass('animate-middle-bar').addClass('animate-out-middle-bar');
+                bottom_bar.removeClass('animate-bottom-bar').addClass('animate-out-bottom-bar');
+                overlay_navigation.removeClass('overlay-slide-down').addClass('overlay-slide-up')
+                nav_item_1.removeClass('slide-in-nav-item').addClass('slide-in-nav-item-reverse');
+                nav_item_2.removeClass('slide-in-nav-item-delay-1').addClass('slide-in-nav-item-delay-1-reverse');
+                nav_item_3.removeClass('slide-in-nav-item-delay-2').addClass('slide-in-nav-item-delay-2-reverse');
+                nav_item_4.removeClass('slide-in-nav-item-delay-3').addClass('slide-in-nav-item-delay-3-reverse');
+                nav_item_5.removeClass('slide-in-nav-item-delay-4').addClass('slide-in-nav-item-delay-4-reverse');
+            }
+        })
+    </script>
 {% endblock %}
