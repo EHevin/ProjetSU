@@ -1,0 +1,248 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block title %}
+	{{parent() }}
+{% endblock %}
+
+{% block body %}
+<section id="profiler">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <h2>Etiam aliquam faucibus velit, a elementum massa donec.</h2>
+                <p id="profiler-description">Donec ultricies euismod nibh, quis posuere ligula hendrerit ac. Praesent non lacinia lacus. Cras dapibus turpis et tellus pulvinar lobortis. Class aptent taciti sociosqu ad litora torquent per conubia.</p>
+                <form class="col-xs-12" style="padding-left:0;" action="#" method="POST">
+                    <div id="form-1">
+                        <label class="col-xs-8">Pour qui préparez-vous ce voyage ?</label>
+                        <p class="col-xs-3 col-xs-offset-1 text-right" >Étape 1/4</p>
+                        <div class="col-sm-6 col-xs-12 img-caption" style="padding-left:0;">
+                            <input style="display: none;" type="radio" name="radio-choice" id="famille" />
+                            <img src="{{ asset('css/img/profiler/famille.jpg')}}" alt="Famille" />
+                            <label for="famille"><span>Famille</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption">
+                            <input style="display: none;" type="radio" name="radio-choice" id="couple" />
+                            <img src="{{ asset('css/img/profiler/couple.jpg')}}" alt="Couple" />
+                            <label for="couple"><span>Couple</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption" style="padding-left:0;">
+                            <input style="display: none;" type="radio" name="radio-choice" id="amis" />
+                            <img src="{{ asset('css/img/profiler/amis.jpg')}}" alt="Amis" />
+                            <label for="amis"><span>Amis</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption">
+                            <input style="display: none;" type="radio" name="radio-choice" id="seul" />
+                            <img src="{{ asset('css/img/profiler/seul.jpg')}}" alt="Seul" />
+                            <label for="seul"><span>Seul</span></label>
+                        </div>
+
+                        <input type="button" onclick="afficher()" id="bouton-to-form-2" value="Continuer" />
+                    </div>
+                    <div id="form-2">
+                        <label class="col-xs-8">Quelle est la durée de votre séjour ?</label>
+                        <p class="col-xs-3 col-xs-offset-1 text-right" >Étape 2/4</p>
+                        <div class="col-sm-6 col-xs-12 img-caption" style="padding-left:0;">
+                            <input style="display: none;" type="radio" name="radio-choice" id="un-jour" />
+                            <img src="{{ asset('css/img/profiler/famille.jpg')}}" alt="Un jour" />
+                            <label for="un-jour"><span>Un jour</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption">
+                            <input style="display: none;" type="radio" name="radio-choice" id="un-week-end" />
+                            <img src="{{ asset('css/img/profiler/couple.jpg')}}" alt="Un week-end" />
+                            <label for="un-week-end"><span>Un week-end</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption" style="padding-left:0;">
+                            <input style="display: none;" type="radio" name="radio-choice" id="une-semaine" />
+                            <img src="{{ asset('css/img/profiler/amis.jpg')}}" alt="Une semaine" />
+                            <label for="une-semaine"><span>Une semaine</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption">
+                            <input style="display: none;" type="radio" name="radio-choice" id="plus" />
+                            <img src="{{ asset('css/img/profiler/seul.jpg')}}" alt="Plus d'une semaine" />
+                            <label for="plus"><span>Plus d'une semaine</span></label>
+                        </div>
+
+                        <input type="button" onclick="afficher2()" value="Continuer" />
+                    </div>
+                    <div id="form-3">
+                        <label class="col-xs-8">Quel type de voyage organisez-vous ?</label>
+                        <p class="col-xs-3 col-xs-offset-1 text-right" >Étape 3/4</p>
+                        <div class="col-sm-6 col-xs-12 img-caption" style="padding-left:0;">
+                            <input style="display: none;" type="radio" name="radio-choice" id="loisir" />
+                            <img src="{{ asset('css/img/profiler/famille.jpg')}}" alt="Loisir" />
+                            <label for="loisir"><span>Loisirs</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption">
+                            <input style="display: none;" type="radio" name="radio-choice" id="romantique" />
+                            <img src="{{ asset('css/img/profiler/couple.jpg')}}" alt="Romantique" />
+                            <label for="romantique"><span>Romantique</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption" style="padding-left:0;">
+                            <input style="display: none;" type="radio" name="radio-choice" id="culturel" />
+                            <img src="{{ asset('css/img/profiler/amis.jpg')}}" alt="Culturel" />
+                            <label for="culturel"><span>Culturel</span></label>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 img-caption">
+                            <input style="display: none;" type="radio" name="radio-choice" id="affaire" />
+                            <img src="{{ asset('css/img/profiler/seul.jpg')}}" alt="Affaire" />
+                            <label for="affaire"><span>Affaires</span></label>
+                        </div>
+
+                        <input type="button" onclick="afficher3()" value="Continuer" />
+                    </div>
+                    <div id="form-4">
+                        <label class="col-xs-8">Laissez-nous vous trouver le bien idéal </label>
+                        <p class="col-xs-3 col-xs-offset-1 text-right" >Étape 4/4</p>
+                        <input type="text" id="nom" class="col-xs-12 champ-formulaire" placeholder="Nom *" required>
+                        <input type="text" id="prenom" class="col-xs-12 champ-formulaire" placeholder="Prénom *" required>
+                        <input type="email" id="email" class="col-xs-12 champ-formulaire" placeholder="Adresse e-mail *" required>
+                        <input type="tel" id="tel" class="col-xs-12 champ-formulaire" placeholder="Téléphone">
+                        <div class="col-xs-12" style="display: inline-block;">
+                            <input type="checkbox" id="news" class="col-xs-1"><label for="news" class="col-xs-11"> Je souhaite recevoir les bons plans chaque mois.</label>
+                        </div>
+
+                        <input type="submit" value="Envoyer" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5 col-xs-12 col-md-offset-1 decouvrir-lyon">
+                <h2>Etiam aliquam faucibus velit, a elementum massa donec.</h2>
+                <p>Donec ultricies euismod nibh, quis posuere ligula hendrerit ac. Praesent non lacinia lacus. Cras dapibus turpis et tellus. Donec ultricies euismod nibh, quis posuere ligula hendrerit ac. Praesent non lacinia lacus. Cras dapibus turpis et tellus.</p>
+                <button type="button">Découvrir Lyon</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="liste-bien">
+    <div class="container">
+        <div class="row">
+            <h2 class="col-sm-7 col-xs-12">Etiam aliquam faucibus velit, a elementum massa donec.</h2>
+            <button class="col-xs-12 col-sm-3 col-sm-offset-2 ">Voir plus de biens</button>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <img src="{{ asset('css/img/produit/01-min.jpg')}}">
+                <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                <a href="#">Découvrir le bien</a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <img src="{{ asset('css/img/produit/02-min.jpg')}}">
+                <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                <a href="#">Découvrir le bien</a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <img src="{{ asset('css/img/produit/03-min.jpg')}}">
+                <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                <a href="#">Découvrir le bien</a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <img src="{{ asset('css/img/produit/04-min.jpg')}}">
+                <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                <p>Aliquam consectetur ligula sit amet rhoncus consequat. Vivamus tincidunt erat ac efficitur faucibus.</p>
+                <a href="#">Découvrir le bien</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="actualites">
+    <div class="container carousel slide" id="myCarousel" data-ride="carousel">
+        <div class="row">
+            <h2 class="col-xs-4">L'actualité de Lyon</h2>
+            <div class="col-xs-1 col-xs-offset-1">
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg class="arrow" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 227.6" style="enable-background:new 0 0 120 227.6;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <defs>
+                                <rect id="SVGID_1_" width="120" height="227.6"/>
+                            </defs>
+                            <clipPath id="SVGID_2_">
+                                <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+                            </clipPath>
+                            <path class="st1" d="M2,118.6L109,225.6c2.5,2.5,6.6,2.5,9.1,0c2.5-2.5,2.5-6.6,0-9.1L15.6,114.1L118.1,11.6
+                                c2.5-2.5,2.5-6.6,0-9.1c-1.2-1.2-2.9-1.9-4.5-1.9c-1.6,0-3.3,0.6-4.5,1.9L2,109.5C-0.5,112-0.5,116.1,2,118.6L2,118.6z M2,118.6"
+                                />
+                        </g>
+                    </g>
+                </svg>
+                </a>
+
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg class="arrow right-arrow" version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 227.6" style="enable-background:new 0 0 120 227.6;" xml:space="preserve">
+                    <g>
+                        <g>
+                            <style type="text/css">
+                                    .st1{fill:#c8192b;}
+                                </style>
+                            <defs>
+                                <rect id="SVGID_1_" width="120" height="227.6"/>
+                            </defs>
+                            <clipPath id="SVGID_2_">
+                                <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+                            </clipPath>
+                            <path class="st1" d="M118.2,109.5L11.1,2.5C8.6-0.1,4.5-0.1,2,2.5C-0.5,5-0.5,9,2,11.5L104.5,114L2,216.5c-2.5,2.5-2.5,6.6,0,9.1
+                                c1.2,1.2,2.9,1.9,4.5,1.9c1.6,0,3.3-0.6,4.5-1.9l107.1-107.1C120.6,116.1,120.6,112,118.2,109.5L118.2,109.5z M2,118.6"/>
+                        </g>
+                    </g>
+                </svg>
+                </a>
+            </div>
+            <button class="col-xs-3 col-xs-offset-3">Voir plus d'actualités</button>
+        </div>
+
+        <div class="row carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="col-lg-6 ">
+                    <img src="{{ asset('css/img/actualites/01.jpg')}}" alt="Actualité">
+                </div>
+                <div class="col-lg-5 col-lg-offset-1">
+                    <p class="date">17 Août 2017</p>
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Etiam aliquam faucibus velit, a elementum massa. Donec ac felis tortor. Morbi gravida mi id ullamcorper mollis. Integer eu elit vel elit accumsan rutrum. Donec ultricies euismod nibh, quis posuere ligula hendrerit ac. Praesent non lacinia lacus. Cras dapibus turpis et tellus pulvinar lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <a id="bouton-actualite" href="#">En savoir plus</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="col-lg-6 ">
+                    <img src="{{ asset('css/img/actualites/02.jpg')}}" alt="Actualité">
+                </div>
+                <div class="col-lg-5 col-lg-offset-1">
+                    <p class="date">28 Septembre 2017</p>
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Etiam aliquam faucibus velit, a elementum massa. Donec ac felis tortor. Morbi gravida mi id ullamcorper mollis. Integer eu elit vel elit accumsan rutrum. Donec ultricies euismod nibh, quis posuere ligula hendrerit ac. Praesent non lacinia lacus. Cras dapibus turpis et tellus pulvinar lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <a href="#">En savoir plus</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="col-lg-6 ">
+                    <img src="{{ asset('css/img/actualites/03.jpg')}}" alt="Actualité">
+                </div>
+                <div class="col-lg-5 col-lg-offset-1">
+                    <p class="date">05 janvier 2018</p>
+                    <h3>Donec ultricies euismod nibh quis posuere ligula</h3>
+                    <p>Etiam aliquam faucibus velit, a elementum massa. Donec ac felis tortor. Morbi gravida mi id ullamcorper mollis. Integer eu elit vel elit accumsan rutrum. Donec ultricies euismod nibh, quis posuere ligula hendrerit ac. Praesent non lacinia lacus. Cras dapibus turpis et tellus pulvinar lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                    <a href="#">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
